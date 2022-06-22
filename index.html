@@ -15,26 +15,27 @@
   <div id="container"></div>
 
 
-
-
+  <!-- ? 모든 React 컴포넌트는 자신의 props를 다룰 때 반드시 순수 함수(동일한 입려값에 동일한 결과)처럼 동작해야 합니다. -->
+  
   <script type="text/babel" data-type="module">
     const container = document.getElementById("container")
 
-
+    const arr = ["제비꽃","동백꽃","수선화","매화","진달래","산버찌","산더덕","산뽕"]
+    const arrMap = arr.map((number)=><li id={number}>{number}</li>)
+    const arrFilterA = arr.filter(x=>x[2]==="꽃")
+    const arrFilterB = arr.filter(x=>x[x.length-1]==="화")
+    console.log(arrFilterA)
+    console.log(arrFilterB)
     class Welcome extends React.Component {
   render() {
     return <h1>Hello, {this.props.name}</h1>;
   }
 }
-    
 
     function AirBubble(){
-
       return(
         <>
-          <dvi>
-            airBubble
-          </dvi>
+          {arrMap}
         </>
       )
     }
@@ -47,7 +48,9 @@
         <Welcome name="sohee" />
           <AirBubble/>
           </div>
-        <div>layer3</div>
+        <div>layer3
+
+          </div>
         <div>layer4</div>
         </>
       );
