@@ -12,44 +12,54 @@
 <body>
 
 
-  <div id="root"></div>
+  <div id="container"></div>
 
 
 
 
   <script type="text/babel" data-type="module">
-    const root = document.getElementById("root")
+    const container = document.getElementById("container")
 
-
-    
-    function Ul() {
-      return (
+    function AirBubble(){
+      return(
         <>
-        <div>
-          what can I do with react?
-          </div>
-        <ul>
-          <li>
-            how can I do react?
-            </li>
-          </ul>
-          </>
-      );
+          <dvi>
+            airBubble
+          </dvi>
+        </>
+      )
     }
-
-
-
-    function Test() {
+    
+    function Layer() {
       return (
         <>
-        <Ul />
-        <div>test</div>
+        <div>layer1</div>
+        <div>layer2
+          <AirBubble/>
+          </div>
+        <div>layer3</div>
+        <div>layer4</div>
         </>
       );
     }
 
 
-    ReactDOM.render(<Ul/> ,root);
+
+    function Root() {
+      return (
+        <>
+        <div id="root1">hello world</div>
+        <div id="root2">
+          in
+          <Layer/>
+          in
+          </div>
+        </>
+      );
+    }
+
+
+    ReactDOM.render(<Root/> ,container);
   </script>
 </body>
 </html>
